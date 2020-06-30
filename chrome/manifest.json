@@ -1,7 +1,9 @@
 {
-  "name": "",
-  "version": "0.1",
-  "description": "",
+  // TODO: Update once name is chosen
+  "name": "Text-Extension",
+  "short_name": "Text-Extend",
+  "version": "0.0.1",
+  "description": "Chrome extension that enhances highlighted text",
   "background": {
     "scripts": ["js/background.js"],
     "persistent": false
