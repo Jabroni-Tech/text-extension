@@ -1,12 +1,21 @@
 {
   "name": "textchromeext",
   "version": "1.0.0",
-  "description": "",
+  "description": "Google chrome extension that allows user to highlight text for better readibility.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix"
   },
+  "keywords": [
+    "extension",
+    "chrome",
+    "text",
+    "pdf",
+    "enhance",
+    "zoom",
+    "readibility",
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -17,7 +26,12 @@
       "./node_modules/.bin/eslint — fix”, “git add"
     ]
   },
-  "author": "",
+  "author": "Jabroni Tech",
+  "contributors": [
+    "Max Peng",
+    "Jason McCutchan",
+    "Jonathan Yuen"
+  ],
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.3.1",
@@ -26,6 +40,10 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Jabroni-Tech/text-extension.git"
   },
   "dependencies": {}
 }
