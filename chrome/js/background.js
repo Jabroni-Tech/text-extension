@@ -6,11 +6,11 @@ chrome.runtime.onInstalled.addListener(function () {
       {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { hostEquals: "developer.chrome.com" }
-          })
+            pageUrl: { hostEquals: "developer.chrome.com" },
+          }),
         ],
-        actions: [new chrome.declarativeContent.ShowPageAction()]
-      }
+        actions: [new chrome.declarativeContent.ShowPageAction()],
+      },
     ]);
   });
 });
