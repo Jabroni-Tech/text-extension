@@ -1,3 +1,19 @@
 body {
   background-color: #edf756;
 }
+
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+.text {
+  background-color: whitesmoke;
+  border: 1px black solid;
+  box-shadow: 5px 5px 5px 5px #888888;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  animation: fadeIn ease 1s;
+}
