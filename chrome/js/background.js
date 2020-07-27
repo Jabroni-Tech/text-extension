@@ -1,5 +1,4 @@
 "use strict";
-
 chrome.runtime.onInstalled.addListener(function () {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.addRules([
@@ -12,5 +11,14 @@ chrome.runtime.onInstalled.addListener(function () {
         actions: [new chrome.declarativeContent.ShowPageAction()]
       }
     ]);
+  });
+  chrome.contextMenus.removeAll();
+  chrome.contextMenus.create({
+    id: "enhance",
+    title: "CSI Enhance",
+    contexts: ["selection"],
+  });
+  chrome.contextMenus.onClicked.addListener((info, tabs) => {
+    console.log(info.selectionText)
   });
 });
