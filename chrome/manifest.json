@@ -11,7 +11,11 @@
   "page_action": {
     "default_popup": "views/popup.html"
   },
-  "permissions": ["declarativeContent", "activeTab"],
+  "permissions": [
+    "declarativeContent",
+    "activeTab",
+    "contextMenus"
+  ],
   "content_scripts": [
     {
       "matches": ["http://*/*","https://*/*"],
