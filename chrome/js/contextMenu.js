@@ -1,3 +1,4 @@
+chrome.contextMenus.removeAll();
 chrome.contextMenus.create({
   id: "enhance",
   title: "CSI Enhancess",
