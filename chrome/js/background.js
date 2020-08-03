@@ -12,13 +12,4 @@ chrome.runtime.onInstalled.addListener(function () {
       }
     ]);
   });
-  chrome.contextMenus.removeAll();
-  chrome.contextMenus.create({
-    id: "enhance",
-    title: "CSI Enhance",
-    contexts: ["selection"],
-  });
-  chrome.contextMenus.onClicked.addListener((info, tabs) => {
-    console.log(info.selectionText)
-  });
 });
