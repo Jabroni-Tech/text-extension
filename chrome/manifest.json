@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "description": "Chrome extension that enhances highlighted text",
   "background": {
-    "scripts": ["js/background.js", "js/contextMenu.js"],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
   "page_action": {
@@ -20,7 +20,7 @@
     {
       "matches": ["http://*/*","https://*/*"],
       "css": ["css/styles.css"],
-      "js": ["js/insertDiv.js", "js/onClick.js"],
+      "js": ["js/main.js", "js/helpers.js"],
       "run_at": "document_idle"
     }
   ],
