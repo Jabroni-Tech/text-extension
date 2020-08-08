@@ -5,13 +5,17 @@
   "version": "0.0.1",
   "description": "Chrome extension that enhances highlighted text",
   "background": {
-    "scripts": ["js/background.js"],
+    "scripts": ["js/background.js", "js/contextMenu.js"],
     "persistent": false
   },
   "page_action": {
     "default_popup": "views/popup.html"
   },
-  "permissions": ["declarativeContent", "activeTab"],
+  "permissions": [
+    "declarativeContent",
+    "activeTab",
+    "contextMenus"
+  ],
   "content_scripts": [
     {
       "matches": ["http://*/*","https://*/*"],
