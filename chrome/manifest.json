@@ -19,7 +19,8 @@
   "content_scripts": [
     {
       "matches": ["http://*/*","https://*/*"],
-      "js": ["js/onClick.js"],
+      "css": ["css/styles.css"],
+      "js": ["js/insertDiv.js", "js/onClick.js"],
       "run_at": "document_idle"
     }
   ],
