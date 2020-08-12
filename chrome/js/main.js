@@ -1,8 +1,8 @@
-window.addEventListener("click", function(event) {
-    console.log('in the click WINDOW', event)
-    insertDiv('Testing this out')
+window.addEventListener("mouseup", function(event) {
+    console.log('in the mouseup WINDOW', event)
+
   });
   
-  document.addEventListener("click", function (event) {
-    console.log("were in the click DOCUMENT", event);
+  document.addEventListener("mouseup", function (event) {
+    console.log("were in the mouseup DOCUMENT", event);
   });

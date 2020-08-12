@@ -12,6 +12,24 @@ const insertDiv = (text, x, y) => {
 }
 
 /**
+ * Returns the coordinates of the cursor from onmouseup
+ * @argument {event} 
+ * Click event from onmouseup
+ * @return {Array[number, number]} Tuple of coordinates
+ */
+const grabCursorCoordinates = (event) => {
+    return [event.clientX, event.clientY]
+}
+
+/**
+ * Returns the coordinates of the center of the window
+ * @return {Array[number, number]} Tuple of coordinates
+ */
+const grabWindowCenterCoordinates = () => {
+    return [Math.round(window.innerWidth/2), Math.round(window.innerHeight/2)]
+}
+
+/**
  * Returns the highlighted text from a webpage.
  * @return {string} String of the highlighted text.
  */
