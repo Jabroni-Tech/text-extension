@@ -1,4 +1,5 @@
 "use strict";
+
 chrome.runtime.onInstalled.addListener(function () {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.addRules([
@@ -18,10 +19,27 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.contextMenus.removeAll();
 chrome.contextMenus.create({
   id: "enhance",
-  title: "CSI Enhancess",
-  contexts: ["selection"],
+  title: "CSI Enhances",
+  contexts: ["all"],
 });
-chrome.contextMenus.onClicked.addListener((info, tabs) => {
-  console.log(info.selectionText)
-});
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (tab) {
+      /* Create the code to be injected */
+      var code = [
+          'var d = document.createElement("div");',
+          'var word = ' + JSON.stringify(info.selectionText),
+          'd.innerHTML = word;',
+          'd.setAttribute("style", "'
+              + 'background-color: red; '
+              + 'position: fixed; '
+              + 'top: 70px; '
+              + 'left: 30px; '
+              + 'z-index: 9999; '
+              + '");',
+          'document.body.appendChild(d);'
+      ].join("\n");
 
+      /* Inject the code into the current tab */
+      chrome.tabs.executeScript(tab.id, { code: code });
+  }
+});

@@ -1,6 +1,6 @@
 /**
  * Returns the highlighted text from a webpage.
- * @argument {string, number, number} 
+ * @argument {string, number, number}
  * String of the highlighted text, 2nd and 3rd arguments are the coordinates for the element
  * @return {null} String of the highlighted text.
  */
@@ -13,7 +13,7 @@ const insertDiv = (text, x, y) => {
 
 /**
  * Returns the coordinates of the cursor from onmouseup
- * @argument {event} 
+ * @argument {event}
  * Click event from onmouseup
  * @return {Array[number, number]} Tuple of coordinates
  */
@@ -37,9 +37,9 @@ const grabHighlightedText = () => {
     return window.getSelection().toString();
   };
 
-/* Popup logic TODO: Decide if needed */
-  let page = document.getElementById("gettingStarted");
-  function changeColor() {
-    page.style.color = "red";
-  }
-  changeColor();
+// /* Popup logic TODO: Decide if needed */
+//   let page = document.getElementById("gettingStarted");
+//   function changeColor() {
+//     page.style.color = "red";
+//   }
+//   changeColor();
