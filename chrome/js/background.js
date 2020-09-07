@@ -1,6 +1,16 @@
 "use strict";
 
 chrome.runtime.onInstalled.addListener(function () {
+  chrome.contextMenus.create({
+    id: "Reload",
+    title: "Reload Extension",
+    contexts: ["page_action"],
+  });
+  chrome.contextMenus.onClicked.addListener((info, tabs) => {
+    if (info.menuItemId === "Reload") {
+      chrome.runtime.reload();
+    }
+  });
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.addRules([
       {
@@ -24,22 +34,8 @@ chrome.contextMenus.create({
 });
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (tab) {
-      /* Create the code to be injected */
-      var code = [
-          'var d = document.createElement("div");',
-          'var word = ' + JSON.stringify(info.selectionText),
-          'd.innerHTML = word;',
-          'd.setAttribute("style", "'
-              + 'background-color: red; '
-              + 'position: fixed; '
-              + 'top: 70px; '
-              + 'left: 30px; '
-              + 'z-index: 9999; '
-              + '");',
-          'document.body.appendChild(d);'
-      ].join("\n");
-
-      /* Inject the code into the current tab */
-      chrome.tabs.executeScript(tab.id, { code: code });
+    chrome.tabs.sendMessage(tab.id, {args: info.selectionText}, function(response) {
+      console.log('response??', response);
+    });
   }
 });

@@ -8,6 +8,15 @@ const insertDiv = (text, x, y) => {
     var div = document.createElement('div');
     div.innerHTML = text
     div.className = 'text'
+    div.style.height = '500'
+    div.style.width = '500'
+    div.style.backgroundColor = 'green'
+    div.style.position = 'absolute'
+    div.id = 'popup'
+    const position = grabWindowCenterCoordinates()
+    div.style.top = `${position[1]}px`
+    div.style.left = `${position[0]}px`
+    document.body.appendChild(div);
     document.querySelector("body").appendChild(div);
 }
 
